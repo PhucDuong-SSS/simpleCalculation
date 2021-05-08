@@ -1,0 +1,121 @@
+$buttonColor1:#F2A13B;
+$backgroundButtonColor:#FDF9F5;
+$backgroundKeyColor: #323232;
+$buttonColor2:#A4A4A4;
+$resultColor: #D4D4D4;
+body {
+    font-family: Roboto;
+    background: #1B212C;
+    background: linear-gradient(to right, #4286f4, #1B212C);
+}
+
+.calculator {
+    width: 320px;
+    height: 520px;
+    background-color: #000000;
+    top: 0;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    &__result {
+        height: 120px;
+        &--old {
+            text-align: right;
+            height: 20px;
+            margin: 0 20px;
+            padding-top: 20px;
+            font-size: 15px;
+            color: $resultColor;
+        }
+        &--display {
+            text-align: right;
+            height: 60px;
+            margin: 10px 20px;
+            font-size: 30px;
+            color: $resultColor;
+        }
+    }
+    &__key {
+        height: 400px;
+    }
+}
+
+.key--operator {
+    @extend %buttonStyle;
+}
+
+.key--number {
+    @extend %buttonStyle;
+}
+
+.key--empty {
+    @extend %buttonStyle;
+}
+
+%buttonStyle {
+    background-color: $backgroundKeyColor;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-radius: 50%;
+    border-width: 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: $backgroundButtonColor;
+}
+
+%colorButton1 {
+    font-size: 20px;
+    background-color: $buttonColor1;
+}
+
+%colorButton2 {
+    font-size: 20px;
+    background-color: $buttonColor2;
+}
+
+.key--operator:focus,
+.key--empty:focus,
+.key--number:focus {
+    outline: 0;
+}
+
+button:nth-child(4) {
+    @extend %colorButton1;
+}
+
+button:nth-child(8) {
+    @extend %colorButton1;
+}
+
+button:nth-child(12) {
+    @extend %colorButton1;
+}
+
+button:nth-child(16) {
+    @extend %colorButton1;
+}
+
+button:nth-child(17) {
+    border-radius: 50px !important;
+    width: 130px !important;
+}
+
+button:nth-child(20) {
+    @extend %colorButton1;
+}
+
+button:nth-child(1) {
+    @extend %colorButton2;
+}
+
+button:nth-child(2) {
+    @extend %colorButton2;
+}
+
+button:nth-child(3) {
+    @extend %colorButton2;
+}
